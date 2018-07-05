@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Every Hour On The Hour</title>
+    <!-- Bootstrap core CSS -->
+    <link href="{{ url_for('static', filename='bootstrap.min.css') }}" rel="stylesheet">
+    <!-- Custom fonts for this template -->
+    <link href="{{ url_for('static', filename='font-awesome.min.css') }}" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+          rel='stylesheet' type='text/css'>
+    <!-- Custom styles for this template -->
+    <link href="{{ url_for('static', filename='clean-blog.min.css') }}" rel="stylesheet">
+</head>
+<body>
+<!-- Page Header -->
+<header class="masthead" style="background-image: url('{{ url_for('static', filename='home-bg.jpg') }}')">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="site-heading">
+                    <h1>Every Hour</h1>
+                    <h1>On</h1>
+                    <h1>The Hour</h1>
+                    <span class="subheading">An open forum that completely resets every 60 minutes.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- Main Content -->
+<div style="margin: 0 auto; text-align: center; margin-bottom: 1em;">
+    <a href="{{ url_for('add') }}" class="btn btn-primary">Create New Post</a>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto" style="max-width : auto; word-wrap: break-word;">
+            {% for post in posts | reverse %}
+                <h1>{{ post.title }}</h1>
+                <p>{{ post.content }}</p>
+                <p><small style="padding-left:15em">{{ post.author }}</small></p>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<hr>
+<!-- Footer -->
+<footer style="margin: 0 auto; text-align: center">
+    <a href="https://github.com/T-Kozikopoulos/ehoth-blog">
+      <span class="fa-stack fa-lg">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+      </span>
+    </a>
+</footer>
+<!-- Bootstrap core JavaScript -->
+<script src="{{ url_for('static', filename='jquery.min.js') }}"></script>
+<script src="{{ url_for('static', filename='bootstrap.bundle.min.js') }}"></script>
+<!-- Custom scripts for this template -->
+<script src="{{ url_for('static', filename='clean-blog.min.js') }}"></script>
+</body>
+</html>
