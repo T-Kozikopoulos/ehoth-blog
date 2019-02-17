@@ -43,7 +43,7 @@
             {% for post in posts | reverse %}
                 <h1>{{ post.title }}</h1>
                 <p>{{ post.content }}</p>
-                <p><small style="padding-left:15em">{{ post.author }}</small></p>
+                <p><small style="padding-left:15em">by <i>{{ post.author }}</i></small></p>
             {% endfor %}
         </div>
     </div>
