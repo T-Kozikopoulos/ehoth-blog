@@ -1,7 +1,7 @@
 # ehoth-blog
 Every Hour On The Hour
 
-An anonymous, open blog that gets wiped every 60 minutes. Made with Flask and hosted on Heroku.
+An anonymous, open forum that gets wiped every 60 minutes. Made with Flask and hosted on Heroku.
 
 <br><br>
 Sidenote:
